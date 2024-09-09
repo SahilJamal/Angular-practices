@@ -1,0 +1,48 @@
+{
+  "students": [
+    {
+      "name": "Sahil",
+      "course": "React",
+      "fees": 3500,
+      "id": 2
+    },
+    {
+      "name": "Ahmad",
+      "course": "Java",
+      "fees": 4000,
+      "id": 3
+    },
+    {
+      "name": "Siddique",
+      "course": "Hibernate",
+      "fees": 4500,
+      "id": 4
+    },
+    {
+      "name": "Mohammad",
+      "course": "Servlet",
+      "fees": 10000,
+      "id": 5
+    },
+    {
+      "name": "Sahil",
+      "course": "Angular",
+      "fees": 200000,
+      "id": 6
+    },
+    {
+      "name": "SahilJamal",
+      "course": "Full Stack",
+      "fees": 125000,
+      "id": 7
+    }
+  ],
+  "authusers":[
+    {
+      "id":1,
+      "email":"sahil@gmail.com",
+      "username":"sahiljamal098",
+      "password":"1234"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+<div class="container mt-5">
+<form #mydata="ngForm" (ngSubmit)="myfun(mydata.value)">
+
+  {{mydata.value | json}}
+
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" name="sname" #sname="ngModel" ngModel required [class.is-invalid]="sname.invalid && sname.touched" pattern="[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*$">
+      
+      <!-- <small class="text-danger" [class.d-none]="sname.valid || sname.untouched">email is required</small> -->
+      <small class="text-danger" *ngIf="sname.errors?.['required']" [class.d-none]="sname.valid || sname.untouched">email is required</small>
+      <small class="text-danger" *ngIf="sname.errors?.['pattern']">email must be in proper formate</small>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="semail" #semail="ngModel" ngModel required>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="mydata.invalid">Submit</button>
+  </form>
+</div>

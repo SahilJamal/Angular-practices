@@ -1,0 +1,67 @@
+<div class="container mt-5">
+  <form [formGroup]="formData">
+    {{ formData.value | json }}
+    <div class="form-group">
+      <label for="exampleInputEmail1">Name</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="name"
+        [class.is-invalid]="name.invalid && name.touched"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+        placeholder="Enter name"
+      />
+
+      <small
+        class="text-danger"
+        *ngIf="name.errors?.['required']"
+        [class.d-none]="name.valid || name.untouched"
+        >This Field is Required !!!</small
+      >
+      <small class="text-danger" *ngIf="name.errors?.['maxlength']"
+        >Name must be within length of 10!!!</small
+      >
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <input
+        type="email"
+        class="form-control"
+        formControlName="email"
+        [class.is-invalid]="email.invalid && email.touched"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+        placeholder="Enter email"
+      />
+
+      <small
+        class="text-danger"
+        *ngIf="email.errors?.['required']"
+        [class.d-none]="email.valid || email.untouched"
+        >This Field is Required !!!</small
+      >
+      <small class="text-danger" *ngIf="email.errors?.['pattern']"
+        >email must be in proper formate</small
+      >
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Contact</label>
+      <input
+        type="number"
+        class="form-control"
+        formControlName="contact"
+        [class.is-invalid]="contact.invalid && contact.touched"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+        placeholder="Enter contact"
+      />
+      <small
+        class="text-danger"
+        [class.d-none]="contact.valid || contact.untouched"
+        >This Field is Required !!!</small
+      >
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>

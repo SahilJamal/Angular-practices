@@ -1,0 +1,110 @@
+<input type="text" [(ngModel)]="name"><br>
+{{name}}
+
+<br><br>
+
+<select [(ngModel)]="count">
+        <option>India</option>
+        <option>Usa</option>
+        <option>Russia</option>
+        <option>China</option>
+</select>
+
+<select>
+        <option *ngFor="let item of cities[count]">{{item}}</option>
+</select>
+
+
+<br><br>
+
+<input type="text" #color>
+<button (click)="selectColor(color.value)">Submit</button>
+
+<div [ngSwitch]="col">
+        <div *ngSwitchCase="'red'"  style="height: 100px; width: 100px; background-color: red;"></div>
+        <div *ngSwitchCase="'yellow'" style="height: 100px; width: 100px; background-color: yellow;"></div>
+        <div *ngSwitchCase="'black'" style="height: 100px; width: 100px; background-color: black;"></div>
+        <div *ngSwitchCase="'blue'" style="height: 100px; width: 100px; background-color: blue;"></div>
+        <div *ngSwitchDefault="'*'" style="height: 100px; width: 100px; background-color: transparent;">not difined</div>
+</div>
+
+
+<div>
+
+        <input type="number" #number1>
+        <input type="number" #number2>
+        <select #operation>
+                <option>+</option>
+                <option>-</option>
+                <option>/</option>
+        </select>
+        <button (click)="selectOpt(operation.value,number1.value,number2.value)">Submit</button>
+
+</div>
+
+
+<div [ngSwitch]="opt">
+        <div *ngSwitchCase="'+'"  style="color: red;">{{num1+num2}}</div>
+        <div *ngSwitchCase="'-'" style="color: yellow;">{{num1-num2}}</div>
+        <div *ngSwitchCase="'/'" style="color: black;">{{num1/num2}}</div>
+        <div *ngSwitchDefault="'*'" style="color: blue;">not selected</div>
+</div>
+
+
+<div>
+
+        <input type="number" [(ngModel)]="num1">
+        <input type="number" [(ngModel)]="num2">
+        <select [(ngModel)]="opt">
+                <option>+</option>
+                <option>-</option>
+                <option>/</option>
+        </select>
+</div>
+
+<div [ngSwitch]="opt">
+        <div *ngSwitchCase="'+'"  style="color: red;">{{num1+num2}}</div>
+        <div *ngSwitchCase="'-'" style="color: yellow;">{{num1-num2}}</div>
+        <div *ngSwitchCase="'/'" style="color: black;">{{(num1/num2).toFixed(2)}}</div>
+        <div *ngSwitchDefault="'*'" style="color: blue;">not selected</div>
+</div>
+
+<br><br>
+<div *ngFor="let num of number">{{num}}</div>
+
+<br><br>
+
+<div *ngFor="let num of number">
+
+        <div *ngIf="num%2==0 then ifBlock else elseBlock"></div>
+        <ng-template #ifBlock>
+                <h1>The Number is {{num}} is Even</h1>
+        </ng-template>
+
+        <ng-template #elseBlock>
+                <h1>The Number is {{num}} is Odd</h1>
+        </ng-template>
+
+</div>
+
+<br><br>
+
+        <table border="2px" align=center cellpadding="20px">
+                <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Salary</th>
+                </tr>
+                <tr *ngFor="let emp of employee">
+                        <td>{{emp.id}}</td>
+                        <td>{{emp.name}}</td>
+                        <td>{{emp.salary}}</td>
+                </tr>
+        </table>
+
+<br><br>
+{{data}}
+
+<br><br>
+
+<input type="submit" value="submit" (click)="fun()">

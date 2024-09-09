@@ -1,0 +1,72 @@
+{
+  "authusers": [
+    {
+      "id": 1,
+      "email": "sahil@gmail.com",
+      "name": "sahiljamal098",
+      "password": "1234"
+    },
+    {
+      "name": "sahiljamal",
+      "email": "sahiljamal098@gmail.com",
+      "password": "sahil@sahil",
+      "id": 2
+    },
+    {
+      "name": "sahiljamal",
+      "email": "sahiljamal098@gamil.com",
+      "password": "sahil@sahil",
+      "id": 3
+    },
+    {
+      "name": "Ram",
+      "email": "ram@gmail.com",
+      "password": "ram@ram",
+      "id": 4
+    }
+  ],
+  "students": [
+    {
+      "name": "sahiljamal",
+      "email": "sahiljamal098@gamil.com",
+      "class": "13",
+      "address": "Chiraj Nagar",
+      "id": 1
+    },
+    {
+      "name": "sahiljamal",
+      "email": "sahiljamal098@gmail.com",
+      "class": "13",
+      "address": "Narayan Nagar",
+      "id": 2
+    },
+    {
+      "name": "sahiljamal",
+      "email": "sahiljamal098@gmail.com",
+      "class": "14",
+      "address": "Chirag Nagar",
+      "id": 3
+    },
+    {
+      "name": "sahiljamal",
+      "email": "sahiljamal098@gmail.com",
+      "class": "15",
+      "address": "Mumbai",
+      "id": 4
+    },
+    {
+      "name": "sahiljamal",
+      "email": "sahiljamal098@gmail.com",
+      "class": "16",
+      "address": "Gorakhpur",
+      "id": 5
+    },
+    {
+      "name": "sahiljamal",
+      "email": "sahiljamal098@gmail.com",
+      "class": "18",
+      "address": "Narayan Nagar",
+      "id": 6
+    }
+  ]
+}

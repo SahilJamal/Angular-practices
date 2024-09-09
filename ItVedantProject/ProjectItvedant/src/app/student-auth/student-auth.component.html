@@ -1,0 +1,134 @@
+<div class="container mt-3 w-50" *ngIf="!user">
+  <form [formGroup]="formData" (ngSubmit)="saveData(formData.value)">
+    <h1 class="d-flex justify-content-center">Sign Up</h1>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Name</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="name"
+        [class.is-invalid]="name.invalid && name.touched"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+        placeholder="Enter name"
+      />
+
+      <small
+        class="text-danger"
+        *ngIf="name.errors?.['required']"
+        [class.d-none]="name.valid || name.untouched"
+        >This Field is Required !!!</small
+      >
+      <small class="text-danger" *ngIf="name.errors?.['maxlength']"
+        >Name must be within length of 10!!!</small
+      >
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <input
+        type="email"
+        class="form-control"
+        formControlName="email"
+        [class.is-invalid]="email.invalid && email.touched"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+        placeholder="Enter email"
+      />
+
+      <small
+        class="text-danger"
+        *ngIf="email.errors?.['required']"
+        [class.d-none]="email.valid || email.untouched"
+        >This Field is Required !!!</small
+      >
+      <small class="text-danger" *ngIf="email.errors?.['pattern']"
+        >email must be in proper formate</small
+      >
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Password</label>
+      <input
+        type="password"
+        class="form-control"
+        formControlName="password"
+        [class.is-invalid]="password.invalid && password.touched"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+        placeholder="Enter Password"
+      />
+      <small
+        class="text-danger"
+        [class.d-none]="password.valid || password.untouched"
+        >This Field is Required !!!</small
+      >
+    </div>
+    <a (click)="register()"
+      >Already have Account
+      <span class="link-secondary" style="cursor: pointer"
+        ><u>Click here.</u></span
+      ></a
+    ><br /><br />
+    <button type="submit" class="btn btn-primary" [disabled]="formData.invalid">
+      Submit
+    </button>
+  </form>
+</div>
+
+<div class="container mt-5 w-50" *ngIf="user">
+  <form [formGroup]="formData1" (ngSubmit)="doLogin()">
+    <h1 class="d-flex justify-content-center">Sign In</h1>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Name</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="username"
+        [class.is-invalid]="username.invalid && username.touched"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+        placeholder="Enter name"
+      />
+
+      <small
+        class="text-danger"
+        *ngIf="username.errors?.['required']"
+        [class.d-none]="username.valid || username.untouched"
+        >This Field is Required !!!</small
+      >
+      <small class="text-danger" *ngIf="username.errors?.['maxlength']"
+        >Name must be within length of 10!!!</small
+      >
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputEmail1">Password</label>
+      <input
+        type="password"
+        class="form-control"
+        formControlName="userpassword"
+        [class.is-invalid]="userpassword.invalid && userpassword.touched"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+        placeholder="Enter Password"
+      />
+      <small
+        class="text-danger"
+        [class.d-none]="userpassword.valid || userpassword.untouched"
+        >This Field is Required !!!</small
+      >
+    </div>
+    <a (click)="register()"
+      >Dont have Account
+      <span class="link-secondary" style="cursor: pointer"
+        ><u>Click here.</u></span
+      ></a
+    ><br /><br />
+    <button
+      type="submit"
+      class="btn btn-primary"
+      [disabled]="formData1.invalid"
+    >
+      Submit
+    </button>
+  </form>
+</div>

@@ -1,0 +1,33 @@
+<input type="text" #sahil>
+<input type="button" (click)="display(sahil.value)" value="click me">
+<br>
+<h1>
+{{name}}</h1>
+<br>
+
+<br>
+<label for="firstNumber">FirstNumber</label>
+<input type="number" #f><br>
+<label for="secondNumber">SecondNumber</label>
+<input type="number" #s><br>
+<select #op> 
+  <option value="+">Add</option>
+  <option value="-">Sub</option>
+  <option value="*">Mul</option>
+  <option value="/">Div</option>
+</select>
+<br>
+
+<input type="button" (click)="calculator(f.value,s.value,op.value)" value="click me">
+
+<br>
+ 
+{{result}}
+
+<br><br>
+
+<app-first-component [data]="pData" (cdata)="cData=$event"></app-first-component>
+
+<br><br>
+
+{{cData}}
